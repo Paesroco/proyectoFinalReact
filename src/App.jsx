@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
-
+import Navbar from "./components/navbar";
+import ProductoImagen from "./components/productoimagen";
 
 function App() {
   const [quantity, setQuantity] = useState(0);
@@ -19,42 +20,18 @@ function App() {
 
   return (
     <div>
-      <header>
-        <nav className="navbar">
-          <div className="logo">sneakers</div>
-          <ul className="nav-links">
-            <li><a href="#">Collections</a></li>
-            <li><a href="#">Men</a></li>
-            <li><a href="#">Women</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-          <div className="cart-user">
-            <div className="cart-icon">
-              <img src="./images/icon-cart.svg" alt="Cart" />
-            </div>
-            <img className="user-avatar" src="./images/image-avatar.png" alt="User Avatar" />
-          </div>
-        </nav>
-      </header>
+      <Navbar></Navbar>
 
       <main>
         <div className="product">
-          <div className="product-image">
-            <img src="./images/image-product-1.jpg" alt="Sneaker" />
-            <div className="thumbnails">
-              <img src="./images/image-product-1-thumbnail.jpg" alt="Thumbnail 1" />
-              <img src="./images/image-product-2-thumbnail.jpg" alt="Thumbnail 2" />
-              <img src="./images/image-product-3-thumbnail.jpg" alt="Thumbnail 3" />
-              <img src="./images/image-product-4-thumbnail.jpg" alt="Thumbnail 4" />
-            </div>
-          </div>
-
+          <ProductoImagen></ProductoImagen>
           <div className="product-details">
             <h2 className="company">Sneaker Company</h2>
             <h1 className="product-title">Fall Limited Edition Sneakers</h1>
             <p className="product-description">
-              These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.
+              These low-profile sneakers are your perfect casual wear companion.
+              Featuring a durable rubber outer sole, they’ll withstand
+              everything the weather can offer.
             </p>
             <div className="price-section">
               <div className="price">
@@ -65,15 +42,15 @@ function App() {
             </div>
             <div className="cart-section">
               <div className="quantity-control">
-                <button 
-                  className="decrease" 
+                <button
+                  className="decrease"
                   onClick={() => handleQuantityChange("decrease")}
                 >
                   -
                 </button>
                 <span className="quantity">{quantity}</span>
-                <button 
-                  className="increase" 
+                <button
+                  className="increase"
                   onClick={() => handleQuantityChange("increase")}
                 >
                   +
